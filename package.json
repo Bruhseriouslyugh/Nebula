@@ -1,0 +1,20 @@
+{
+  "name": "chromebook-chat-app-calls",
+  "version": "1.2.0",
+  "description": "Chat app with sessions, profile pictures, DMs, groups (10 max), and 1-on-1 audio calling",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-sqlite3": "^0.9.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.1",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
+  }
+}

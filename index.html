@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chromebook Chat — Calls</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar"><h1>Chromebook Chat</h1><div id="top-actions"></div></header>
+    <main class="main-grid">
+      <section class="auth-panel" id="auth">
+        <div class="card">
+          <h2>Create account</h2>
+          <input id="reg-username" placeholder="username" />
+          <input id="reg-password" placeholder="password" type="password" />
+          <button id="btn-register">Create</button>
+          <div id="reg-msg" class="msg"></div>
+        </div>
+        <div class="card">
+          <h2>Sign in</h2>
+          <input id="login-username" placeholder="username" />
+          <input id="login-password" placeholder="password" type="password" />
+          <button id="btn-login">Sign in</button>
+          <div id="login-msg" class="msg"></div>
+        </div>
+      </section>
+
+      <aside class="sidebar hidden" id="dashboard">
+        <div class="panel">
+          <div class="profile" id="profile"></div>
+          <div class="section">
+            <h3>Friends</h3>
+            <ul id="friends-list" class="list"></ul>
+            <input id="friend-code" placeholder="Friend code (e.g. A1B2C3)" />
+            <button id="btn-add-friend">Add Friend</button>
+            <div style="margin-top:8px;">
+              <label>Avatar: <input id="avatar-file" type="file" accept="image/*" /></label>
+              <button id="btn-upload-avatar">Upload</button>
+            </div>
+          </div>
+          <div class="section">
+            <h3>Direct Messages</h3>
+            <ul id="dms-list" class="list"></ul>
+          </div>
+          <div class="section">
+            <h3>Groups</h3>
+            <ul id="groups-list" class="list"></ul>
+            <input id="new-group-name" placeholder="New group name" />
+            <button id="btn-create-group">Create Group</button>
+            <input id="join-group-code" placeholder="Join group code" />
+            <button id="btn-join-group">Join Group</button>
+          </div>
+          <button id="btn-logout" class="danger">Logout</button>
+        </div>
+      </aside>
+
+      <section class="chat-area hidden" id="chat-area">
+        <div class="chat-header"><h2 id="chat-title">Select a conversation</h2></div>
+        <div id="messages" class="messages"></div>
+        <div class="send">
+          <input id="message-input" placeholder="Write a message..." />
+          <button id="btn-send">Send</button>
+        </div>
+        <div id="call-ui" style="margin-top:8px;"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
